@@ -3,7 +3,6 @@ package com.example.designpattern.chapter016.handler;
 import com.example.designpattern.chapter016.AlertHandler;
 import com.example.designpattern.chapter016.AlertRule;
 import com.example.designpattern.chapter016.Notification;
-import com.example.designpattern.chapter016.enums.NotificationEmergencyLevel;
 import com.example.designpattern.chapter016.model.ApiStatInfo;
 
 /**
