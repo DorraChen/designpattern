@@ -27,10 +27,11 @@ public class MetricsCollectorProxy {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("in proxy");
+            System.out.println("in proxy代理模式");
             Object result = method.invoke(proxiedObject, args);
             String apiName = proxiedObject.getClass().getName() + ":" + method.getName();
             System.out.println("apiName: " + apiName);
+            System.out.println("测试一下git merge!");
             return result;
         }
     }
