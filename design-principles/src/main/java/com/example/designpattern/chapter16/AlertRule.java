@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter016;
+package com.example.designpattern.chapter16;
 
 /**
  * @author clz

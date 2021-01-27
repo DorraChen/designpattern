@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter016.enums;
+package com.example.designpattern.chapter16.enums;
 
 /**
  * @author clz

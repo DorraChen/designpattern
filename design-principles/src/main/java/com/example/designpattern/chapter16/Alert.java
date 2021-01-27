@@ -1,6 +1,6 @@
-package com.example.designpattern.chapter016;
+package com.example.designpattern.chapter16;
 
-import com.example.designpattern.chapter016.model.ApiStatInfo;
+import com.example.designpattern.chapter16.model.ApiStatInfo;
 
 import java.util.ArrayList;
 import java.util.List;

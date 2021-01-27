@@ -1,9 +1,9 @@
-package com.example.designpattern.chapter016.handler;
+package com.example.designpattern.chapter16.handler;
 
-import com.example.designpattern.chapter016.AlertHandler;
-import com.example.designpattern.chapter016.AlertRule;
-import com.example.designpattern.chapter016.Notification;
-import com.example.designpattern.chapter016.model.ApiStatInfo;
+import com.example.designpattern.chapter16.AlertHandler;
+import com.example.designpattern.chapter16.AlertRule;
+import com.example.designpattern.chapter16.Notification;
+import com.example.designpattern.chapter16.model.ApiStatInfo;
 
 /**
  * @author clz
