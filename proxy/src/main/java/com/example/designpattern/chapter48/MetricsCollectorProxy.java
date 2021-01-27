@@ -27,7 +27,7 @@ public class MetricsCollectorProxy {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("in proxy代理模式");
+            System.out.println("in proxy代理模式test");
             Object result = method.invoke(proxiedObject, args);
             String apiName = proxiedObject.getClass().getName() + ":" + method.getName();
             System.out.println("apiName: " + apiName);
