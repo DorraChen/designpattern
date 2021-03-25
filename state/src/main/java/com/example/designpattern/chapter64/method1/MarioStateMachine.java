@@ -3,7 +3,7 @@ package com.example.designpattern.chapter64.method1;
 import com.example.designpattern.chapter64.State;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2021/1/7 22:31
  * @description 状态机实现方式一：分支逻辑法
  */

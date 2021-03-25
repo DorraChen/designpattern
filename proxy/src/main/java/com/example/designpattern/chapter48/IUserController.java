@@ -1,7 +1,7 @@
 package com.example.designpattern.chapter48;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2021/1/27 17:06
  * @description
  */

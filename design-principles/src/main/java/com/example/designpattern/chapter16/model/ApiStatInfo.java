@@ -3,7 +3,7 @@ package com.example.designpattern.chapter16.model;
 import lombok.Data;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2020/1/28 17:03
  * @description
  */

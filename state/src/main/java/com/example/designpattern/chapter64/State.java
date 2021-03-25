@@ -1,7 +1,7 @@
 package com.example.designpattern.chapter64;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2021/1/7 22:27
  * @description 马里奥可以变身为多种形态，
  * 比如小马里奥（Small Mario）、

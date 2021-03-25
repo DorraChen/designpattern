@@ -1,7 +1,7 @@
 package com.example.designpattern.chapter16.enums;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2020/1/28 17:09
  * @description
  */
