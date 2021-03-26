@@ -38,3 +38,5 @@
 书籍:
 * [深入理解Java虚拟机:JVM高级特性与最佳实践(第2版)](https://book.douban.com/subject/24722612/)
 * [Head First 设计模式（中文版）](https://book.douban.com/subject/2243615/)
+
+以及各种国内外技术博客

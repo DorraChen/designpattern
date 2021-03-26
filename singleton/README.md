@@ -83,3 +83,20 @@ public class Singleton {
  如果此时线程 B 也执行 getInstance() 方法,那么线程 B 在执行第一个判断时会发现 instance != null ,
  所以直接返回 instance,而此时的 instance 是没有初始化过的,如果我们这个时候访问 instance 的成员变量就可能触发空指针异常.
  
+ 所以上面给的这个双重检测代码还是有点问题的,要解决这个问题,我们需要给 instance 成员变量加上 volatile 关键字,禁止指令重排序才行.
+ 
+ 争哥说:实际上，只有很低版本的 Java 才会有这个问题。我们现在用的高版本的 Java 已经在 JDK 内部实现中解决了这个问题
+ （解决的方法很简单，只要把对象 new 操作和初始化操作设计为原子操作，就自然能禁止重排序）
+ 
+ // TODO
+ 
+ 这个还待研究.
+ 参考链接:
+ https://www.javacodemonk.com/threadsafe-singleton-design-pattern-java-806ad7e6
+ https://shipilev.net/blog/2014/safe-public-construction/
+ 
+ 看到Spring源码中有涉及到单例模式的设计,比如 ReactiveAdapterRegistry 类, 参考代码:
+ [ReactiveAdapterRegistry](https://github.com/spring-projects/spring-framework/blob/master/spring-core/src/main/java/org/springframework/core/ReactiveAdapterRegistry.java)
+ 
+ 还有jdk源码中,比如 AbstractQueuedSynchronizer 类, 参考代码:
+ [AbstractQueuedSynchronizer](https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/concurrent/locks/AbstractQueuedSynchronizer.java)
