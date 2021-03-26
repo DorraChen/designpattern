@@ -92,6 +92,7 @@ public class Singleton {
  
  这个还待研究.
  参考链接:
+ https://segmentfault.com/a/1190000022003303
  https://www.javacodemonk.com/threadsafe-singleton-design-pattern-java-806ad7e6
  https://shipilev.net/blog/2014/safe-public-construction/
  
