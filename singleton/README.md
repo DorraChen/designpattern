@@ -95,6 +95,7 @@ public class Singleton {
  https://segmentfault.com/a/1190000022003303
  https://www.javacodemonk.com/threadsafe-singleton-design-pattern-java-806ad7e6
  https://shipilev.net/blog/2014/safe-public-construction/
+ https://chriswhocodes.com/hotspot_options_openjdk11.html
  
  看到Spring源码中有涉及到单例模式的设计,比如 ReactiveAdapterRegistry 类, 参考代码:
  [ReactiveAdapterRegistry](https://github.com/spring-projects/spring-framework/blob/master/spring-core/src/main/java/org/springframework/core/ReactiveAdapterRegistry.java)
