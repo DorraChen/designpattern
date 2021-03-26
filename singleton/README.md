@@ -72,6 +72,7 @@ public class Singleton {
  * 分配一块内存 M;
  * 在内存 M 上初始化 Singleton 对象;
  * 然后 M 的地址赋值给 instance 变量.
+ 
  但是实际上可能的执行路径却是这样的:
  * 分配一块内存 M;
  * 将 M 的地址赋值给 instance 变量;
