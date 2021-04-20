@@ -1,7 +1,7 @@
-package com.example.designpattern.chapter41.detection;
+package com.example.designpattern.detection;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2021/3/26 13:49
  * @description 双重检测
  */

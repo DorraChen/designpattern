@@ -1,7 +1,7 @@
-package com.example.designpattern.chapter41.lazy;
+package com.example.designpattern.lazy;
 
 /**
- * @author clz
+ * @author dorra
  * @date 2021/3/26 11:37
  * @description 懒汉式
  */

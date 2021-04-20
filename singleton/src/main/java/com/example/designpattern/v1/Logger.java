@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter41.v1;
+package com.example.designpattern.v1;
 
 import java.io.File;
 import java.io.FileWriter;

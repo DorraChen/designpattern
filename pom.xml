@@ -9,6 +9,7 @@
         <module>state</module>
         <module>proxy</module>
         <module>singleton</module>
+        <module>factory</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,5 +1,6 @@
 # 单例模式(Singleton Design Pattern)
 在一个jvm环境下,一个类只允许创建一个对象(或者实例),那这个类就是一个单例类,这种设计模式就叫作单例设计模式,简称单例模式.
+
 ## 如何实现一个单例?
 要实现一个单例,我们需要关注的点无外乎下面几个:
 * 构造函数需要是 private 访问权限的,这样才能避免外部通过 new 创建实例;
@@ -17,7 +18,7 @@ public class Singleton {
     }
 }
 ```
-优点: 如果初始化有问题则在程序启动时暴露, 提前暴露问题.
+优点: instance的实例创建是线程安全的; 如果初始化有问题则在程序启动时暴露, 提前暴露问题.
 
 缺点: 饿汉式不支持延迟加载.如果从始至终从未使用过这个实例,就会比较浪费连接资源和内存.
 
@@ -44,7 +45,7 @@ public class Singleton {
 ```
 优点: 懒汉式相对于饿汉式的优势是支持延迟加载.节省内存.
 
-缺点: 性能问题,不支持高并发.
+缺点: 这种实现方式会导致频繁加锁释放锁,不支持高并发,性能问题,频繁调用会产生性能瓶颈.
 
 ### 3. 双重检测
 ```java
@@ -64,7 +65,7 @@ public class Singleton {
     }
 }
 ```
- instance 被创建之后,即便再调用 getInstance() 函数也不会再进入到加锁逻辑中了.
+ instance 被创建之后,即便再调用 getInstance() 函数也不会再进入到加锁逻辑中了.这种实现方式解决了懒汉式并发度低的问题.
  
  网上有人说,这种实现方式有些问题.因为指令重排序,可能会导致 IdGenerator 对象被 new 出来,并且赋值给 instance 之后,
  还没来得及初始化(执行构造函数中的代码逻辑),就被另一个线程使用了.
@@ -85,15 +86,15 @@ public class Singleton {
  
  所以上面给的这个双重检测代码还是有点问题的,要解决这个问题,我们需要给 instance 成员变量加上 volatile 关键字,禁止指令重排序才行.
  
- 争哥说:实际上，只有很低版本的 Java 才会有这个问题。我们现在用的高版本的 Java 已经在 JDK 内部实现中解决了这个问题
+ 但是也有人说:实际上，只有很低版本的 Java 才会有这个问题。我们现在用的高版本的 Java 已经在 JDK 内部实现中解决了这个问题
  （解决的方法很简单，只要把对象 new 操作和初始化操作设计为原子操作，就自然能禁止重排序）
  
  // TODO
  
- 这个还待研究.
+ 这个还待研究,等看到了这方面的再回过头来解释这个问题.
  参考链接:
  https://segmentfault.com/a/1190000022003303
- https://www.javacodemonk.com/threadsafe-singleton-design-pattern-java-806ad7e6
+ https://www.javacodemonk.com/threadsafe-singleton1-design-pattern-java-806ad7e6
  https://shipilev.net/blog/2014/safe-public-construction/
  https://chriswhocodes.com/hotspot_options_openjdk11.html
  
@@ -102,3 +103,49 @@ public class Singleton {
  
  还有jdk源码中,比如 AbstractQueuedSynchronizer 类, 参考代码:
  [AbstractQueuedSynchronizer](https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/concurrent/locks/AbstractQueuedSynchronizer.java)
+ 
+ ### 4. 静态内部类
+ ```java
+public class Singleton {
+    private AtomicLong id = new AtomicLong(0);
+
+    private Singleton() { }
+
+    private static class SingletonHolder {   private static final Singleton instance = new Singleton(); }
+
+    public static Singleton getInstance() { return SingletonHolder.instance; }
+
+    public long getId() { return id.incrementAndGet(); }
+}
+```
+类似饿汉式,但又能做到了延迟加载.
+SingletonHolder 是一个静态内部类,当外部类 IdGenerator 被加载的时候,并不会创建 SingletonHolder 实例对象.
+只有当调用 getInstance() 方法时,SingletonHolder 才会被加载,这个时候才会创建 instance.
+instance 的唯一性、创建过程的线程安全性,都由 JVM 来保证.
+所以这种实现方法既保证了线程安全,也支持高并发,又能做到延迟加载.
+
+### 5. 枚举
+```java
+public enum Singleton {
+    INSTANCE;
+    private AtomicLong id = new AtomicLong(0);
+
+    public long getId() { return id.incrementAndGet(); }
+}
+```
+通过 Java 枚举类型本身的特性,保证了实例创建的线程安全性和实例的唯一性.
+
+ 
+## 单例模式的用处
+从业务概念上,有些数据在系统中只应该保存一份,就比较适合设计为单例类.
+比如系统的配置信息类.除此之外,我们还可以使用单例解决资源访问冲突的问题.
+
+
+## 参考
+ 极客时间课程: 
+ * [设计模式之美](https://time.geekbang.org/column/intro/250?utm_source=pc&utm_medium=chaping&utm_term=pc_interstitial_826)
+ * [Java并发编程实战](https://time.geekbang.org/column/intro/100023901?utm_source=pc&utm_medium=chaping&utm_term=pc_interstitial_826)
+ 
+ 书籍:
+ * [深入理解Java虚拟机:JVM高级特性与最佳实践(第2版)](https://book.douban.com/subject/24722612/)
+ * [Head First 设计模式（中文版）](https://book.douban.com/subject/2243615/)
