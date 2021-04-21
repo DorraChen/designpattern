@@ -8,17 +8,17 @@ import java.util.concurrent.atomic.AtomicLong;
  * @description 利用 Java 的静态内部类
  * 类似饿汉式，但又能做到了延迟加载
  */
-public class Singleton {
+public class StaticBlockSingleton {
     private AtomicLong id = new AtomicLong(0);
 
-    private Singleton() {
+    private StaticBlockSingleton() {
     }
 
     private static class SingletonHolder {
-        private static final Singleton instance = new Singleton();
+        private static final StaticBlockSingleton instance = new StaticBlockSingleton();
     }
 
-    public static Singleton getInstance() {
+    public static StaticBlockSingleton getInstance() {
         return SingletonHolder.instance;
     }
 

@@ -1,3 +1,4 @@
+[TOC]
 # 单例模式(Singleton Design Pattern)
 在一个jvm环境下,一个类只允许创建一个对象(或者实例),那这个类就是一个单例类,这种设计模式就叫作单例设计模式,简称单例模式.
 
@@ -107,15 +108,12 @@ public class Singleton {
  ### 4. 静态内部类
  ```java
 public class Singleton {
-    private AtomicLong id = new AtomicLong(0);
 
     private Singleton() { }
 
     private static class SingletonHolder {   private static final Singleton instance = new Singleton(); }
 
     public static Singleton getInstance() { return SingletonHolder.instance; }
-
-    public long getId() { return id.incrementAndGet(); }
 }
 ```
 类似饿汉式,但又能做到了延迟加载.
@@ -127,10 +125,10 @@ instance 的唯一性、创建过程的线程安全性,都由 JVM 来保证.
 ### 5. 枚举
 ```java
 public enum Singleton {
+    /**
+     * 单例
+     */
     INSTANCE;
-    private AtomicLong id = new AtomicLong(0);
-
-    public long getId() { return id.incrementAndGet(); }
 }
 ```
 通过 Java 枚举类型本身的特性,保证了实例创建的线程安全性和实例的唯一性.
@@ -139,6 +137,48 @@ public enum Singleton {
 ## 单例模式的用处
 从业务概念上,有些数据在系统中只应该保存一份,就比较适合设计为单例类.
 比如系统的配置信息类.除此之外,我们还可以使用单例解决资源访问冲突的问题.
+
+## 什么是多例模式?
+"多例"指的就是,一个类可以创建多个对象.
+```java
+public class Multiton {
+    private static final ConcurrentHashMap<String, Multiton> instances = new ConcurrentHashMap<>();
+
+    private Multiton() { }
+
+    public static Multiton getInstance(String name) {
+        instances.putIfAbsent(name, new Multiton());
+        return instances.get(name);
+    }
+}
+
+// 测试结果:
+public class MultitonTest {
+    @Test
+    public void multitonTest() {
+        // 相同
+        Assert.assertEquals(Multiton.getInstance("Hello"), Multiton.getInstance("Hello"));
+        // 不同
+        Assert.assertEquals(Multiton.getInstance("Hello"), Multiton.getInstance("Ketty"));
+    }
+}
+```
+如上面的代码,同一类型的只能创建一个对象,不同类型的可以创建多个对象.
+
+这种多例模式的理解方式有点类似工厂模式.
+它跟工厂模式的不同之处是,多例模式创建的对象都是同一个类的对象,而工厂模式创建的是不同子类的对象.
+实际上,它还有点类似享元模式.
+另外,枚举类型也相当于多例模式,一个类型只能对应一个对象,一个类可以创建多个对象.
+
+
+
+
+// TODO
+思考:
+单例唯一性的作用范围是进程,实际上,对于 Java 语言来说,单例类对象的唯一性的作用范围并非进程,而是类加载器（Class Loader）,这个说法该怎么理解?
+
+
+
 
 
 ## 参考

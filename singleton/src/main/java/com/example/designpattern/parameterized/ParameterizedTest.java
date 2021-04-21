@@ -3,7 +3,7 @@ package com.example.designpattern.parameterized;
 /**
  * @author Dorra
  * @date 2021/4/20 16:02
- * @description
+ * @description 单例支持有参数的构造函数改造的测试
  */
 public class ParameterizedTest {
     public static void main(String[] args) {

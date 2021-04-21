@@ -7,10 +7,13 @@ package com.example.designpattern.hungry;
  * 在类加载的时候,instance静态实例就已经创建并初始化好了,所以instance实例的创建过程是线程安全的
  * 不过,这样的实现方式不支持延迟加载
  */
-public class Singleton {
-    private static final Singleton instance = new Singleton();
-    private Singleton() {}
-    public static Singleton getInstance() {
+public class HungrySingleton {
+    private static final HungrySingleton instance = new HungrySingleton();
+
+    private HungrySingleton() {
+    }
+
+    public static HungrySingleton getInstance() {
         return instance;
     }
 }
