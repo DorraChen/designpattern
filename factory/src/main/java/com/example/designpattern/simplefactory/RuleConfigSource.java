@@ -15,8 +15,7 @@ public class RuleConfigSource {
         String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
         IRuleConfigParser parser = RuleConfigParserFactory.createParser(ruleConfigFileExtension);
         if (parser == null) {
-            throw new InvalidRuleConfigException(
-                    "Rule config file format is not supported: " + ruleConfigFilePath);
+            throw new InvalidRuleConfigException("Rule config file format is not supported: " + ruleConfigFilePath);
         }
 
         String configText = "";
@@ -26,8 +25,13 @@ public class RuleConfigSource {
     }
 
     private String getFileExtension(String filePath) {
+        String extension = "";
         //...解析文件名获取扩展名，比如rule.json，返回json
-        return "json";
+        int index = filePath.lastIndexOf(".");
+        if (index > 0) {
+            extension = filePath.substring(index + 1);
+        }
+        return extension;
     }
 
 
