@@ -1,7 +1,7 @@
 package com.example.designpattern.doublecheck;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/21 15:08
  * @description 双重检测性能优化版本
  * volatile 修饰的变量访问会涉及访问主存储器,而访问主存储器是相当昂贵的.

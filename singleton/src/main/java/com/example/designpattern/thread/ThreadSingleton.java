@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/21 10:22
  * @description 如何实现线程唯一的单例？
  */

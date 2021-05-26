@@ -3,7 +3,7 @@ package com.example.designpattern.multiton;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/21 15:52
  * @description 多例模式
  */

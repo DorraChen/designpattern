@@ -1,7 +1,7 @@
 package com.example.designpattern.ustatic;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/20 17:25
  * @description 静态方法实现的单例如何使用
  */

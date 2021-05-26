@@ -1,7 +1,7 @@
 package com.example.designpattern.parameterized;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/20 16:00
  * @description 单例支持有参数的构造函数该如何改造?
  * 方式1: init() 函数,在使用这个单例类的时候,要先调用 init() 方法,然后才能调用 getInstance() 方法

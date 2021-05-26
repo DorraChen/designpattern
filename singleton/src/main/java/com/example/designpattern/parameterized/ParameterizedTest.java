@@ -1,7 +1,7 @@
 package com.example.designpattern.parameterized;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/20 16:02
  * @description 单例支持有参数的构造函数改造的测试
  */

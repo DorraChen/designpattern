@@ -1,10 +1,7 @@
-package com.example.designpattern.parser;
-
-import com.example.designpattern.IRuleConfigParser;
-import com.example.designpattern.RuleConfig;
+package com.example.designpattern.factory;
 
 /**
- * @author Dorra
+ * @author dorra
  * @date 2021/4/20 19:32
  * @description
  */
