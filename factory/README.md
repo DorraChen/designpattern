@@ -44,6 +44,15 @@ DateFormat、Calendar、Spring 框架中的 BeanFactory
 [ShapeFactory.java](src/main/java/com/example/designpattern/other/ShapeFactory.java), [FactoryPatternDemo.java](src/main/java/com/example/designpattern/other/FactoryPatternDemo.java)
 
 
+5.创建对象的"大工程"--依赖注入容器(Dependency Injection Container,简称DI容器)
+
+DI 容器底层最基本的设计思路就是基于工厂模式的.(反射+工厂模式) 
+
+DI 核心功能: 配置解析, 对象创建, 对象生命周期管理.
+
+
+
+
 参考文章:
 * [设计模式之美](https://time.geekbang.org/column/intro/250?utm_source=pc&utm_medium=chaping&utm_term=pc_interstitial_826)
 * https://www.oschina.net/question/2680454_2236635?sort=time
