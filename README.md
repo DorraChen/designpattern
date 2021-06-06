@@ -4,8 +4,8 @@
 ## 创建型
 * [单例模式(Singleton Design Pattern)](singleton/README.md)
 * [工厂模式(Factory Design Pattern)](factory/README.md)
+* [创造者模式(Builder Design Pattern)](builder/README.md)
 * 原型
-* 创造者
 
 ## 构造型
 * 代理
