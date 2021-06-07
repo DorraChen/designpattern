@@ -1,13 +1,12 @@
-- [工厂模式(Factory Design Pattern)](#工厂模式(Factory Design Pattern))
-    - [1.简单工厂](#1.简单工厂)
-    - [2.工厂方法](#2.工厂方法)
-    - [3.抽象工厂](#3.抽象工厂)
-    - [4.其他拓展与思考](#4.其他拓展与思考)
-    - [5.实现一个简单的依赖注入(DI)框架](#5.实现一个简单的依赖注入(DI)框架)
-
-
 # 工厂模式(Factory Design Pattern)
 
+- [工厂模式(Factory Design Pattern)](#工厂模式(Factory Design Pattern))
+  - [1.简单工厂](#1.简单工厂)
+  - [2.工厂方法](#2.工厂方法)
+  - [3.抽象工厂](#3.抽象工厂)
+  - [4.其他拓展与思考](#4.其他拓展与思考)
+  - [5.实现一个简单的依赖注入(DI)框架](#5.实现一个简单的依赖注入(DI)框架)
+  
 ## 1.简单工厂
 
 我的理解就是直接 new 相应的对象. 见[RuleConfigSource.java](src/main/java/com/example/designpattern/factory/RuleConfigSource.java) 中的 createParserA 方法和他的优化版 createParserB 方法.
