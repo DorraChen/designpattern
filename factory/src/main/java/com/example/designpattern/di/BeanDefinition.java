@@ -97,7 +97,7 @@ public class BeanDefinition {
                         throw new IllegalArgumentException("当参数为引用类型时，无需设置 type 参数");
                     }
 
-                    // null 是 string 实例妈？
+                    // null 是 string 实例吗？
                     if (!(arg instanceof String)) {
                         throw new IllegalArgumentException("请设置引用 ID");
                     }

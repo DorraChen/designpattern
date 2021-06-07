@@ -35,6 +35,7 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
                     in.close();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    // log error
                 }
             }
         }

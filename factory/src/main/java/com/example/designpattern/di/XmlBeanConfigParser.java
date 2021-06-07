@@ -19,7 +19,7 @@ import java.util.List;
 public class XmlBeanConfigParser implements BeanConfigParser {
     @Override
     public List<BeanDefinition> parse(InputStream inputStream) {
-        List beanDefinitions = new ArrayList<>();
+        List<BeanDefinition> beanDefinitions = new ArrayList<>();
 
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -35,7 +35,9 @@ public class XmlBeanConfigParser implements BeanConfigParser {
 
             for (int i = 0; i < beanList.getLength(); i++) {
                 Node node = beanList.item(i);
-                if (node.getNodeType() != Node.ELEMENT_NODE) continue;
+                if (node.getNodeType() != Node.ELEMENT_NODE) {
+                    continue;
+                }
 
                 Element element = (Element) node;
                 BeanDefinition beanDefinition = new BeanDefinition(
@@ -65,7 +67,9 @@ public class XmlBeanConfigParser implements BeanConfigParser {
     public void loadConstructorArgs(NodeList nodes, BeanDefinition beanDefinition) {
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
-            if (node.getNodeType() != Node.ELEMENT_NODE) continue;
+            if (node.getNodeType() != Node.ELEMENT_NODE) {
+                continue;
+            }
             Element element = (Element) node;
 
             BeanDefinition.ConstructorArg constructorArg = null;

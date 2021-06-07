@@ -1,10 +1,18 @@
+- [工厂模式(Factory Design Pattern)](#工厂模式(Factory Design Pattern))
+- [1.简单工厂](#1.简单工厂)
+- [2.工厂方法](#2.工厂方法)
+- [3.抽象工厂](#3.抽象工厂)
+- [4.其他拓展与思考](#4.其他拓展与思考)
+- [5.实现一个简单的依赖注入(DI)框架](#5.实现一个简单的依赖注入(DI)框架)
+
+
 # 工厂模式(Factory Design Pattern)
 
-1.简单工厂
+## 1.简单工厂
 
 我的理解就是直接 new 相应的对象. 见[RuleConfigSource.java](src/main/java/com/example/designpattern/factory/RuleConfigSource.java) 中的 createParserA 方法和他的优化版 createParserB 方法.
 
-2.工厂方法
+## 2.工厂方法
 
 我的理解就是创建工厂类由工厂类去 new 对象, 使用方只需要使用工厂类即可.
 
@@ -29,26 +37,37 @@
 
 * 控制复杂度：将创建代码抽离出来，让原本的函数或类职责更单一，代码更简洁。
 
-3.抽象工厂
+## 3.抽象工厂
 未研究
-
 
 Java 中你见过哪些工厂类?
 DateFormat、Calendar、Spring 框架中的 BeanFactory
 
 
 
-4.其他拓展与思考:
+## 4.其他拓展与思考
 学工厂模式,总觉得写得很复杂. Java 8 已经提供了函数式接口,是否能够通过函数式实现工厂模式呢?怎么样实现?
 
 [ShapeFactory.java](src/main/java/com/example/designpattern/other/ShapeFactory.java), [FactoryPatternDemo.java](src/main/java/com/example/designpattern/other/FactoryPatternDemo.java)
 
+## 5.实现一个简单的依赖注入(DI)框架
 
-5.创建对象的"大工程"--依赖注入容器(Dependency Injection Container,简称DI容器)
+创建对象的"大工程"--依赖注入容器(Dependency Injection Container,简称DI容器)
 
 DI 容器底层最基本的设计思路就是基于工厂模式的.(反射+工厂模式) 
 
 DI 核心功能: 配置解析, 对象创建, 对象生命周期管理.
+
+实现一个简单的依赖注入(DI)框架
+
+* 执行入口
+  * ApplicationContext 接口
+  * ClassPathXmlApplicationContext 实现类
+* 配置文件解析
+  * BeanConfigParser 接口
+  * XmlBeanConfigParser 实现类
+* 核心工厂类设计
+  * BeansFactory
 
 
 
