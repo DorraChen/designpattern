@@ -5,7 +5,7 @@
 * [单例模式(Singleton Design Pattern)](singleton/README.md)
 * [工厂模式(Factory Design Pattern)](factory/README.md)
 * [创造者模式(Builder Design Pattern)](builder/README.md)
-* 原型
+* [原型模式(Prototype Design Pattern)](prototype/README.md)
 
 ## 构造型
 * 代理

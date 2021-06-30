@@ -21,38 +21,6 @@ public class ResourcePoolConfig {
         this.minIdle = builder.minIdle;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getMaxTotal() {
-        return maxTotal;
-    }
-
-    public void setMaxTotal(int maxTotal) {
-        this.maxTotal = maxTotal;
-    }
-
-    public int getMaxIdle() {
-        return maxIdle;
-    }
-
-    public void setMaxIdle(int maxIdle) {
-        this.maxIdle = maxIdle;
-    }
-
-    public int getMinIdle() {
-        return minIdle;
-    }
-
-    public void setMinIdle(int minIdle) {
-        this.minIdle = minIdle;
-    }
-
     /**
      * 我们将Builder类设计成了ResourcePoolConfig的内部类。
      * 我们也可以将Builder类设计成独立的非内部类ResourcePoolConfigBuilder。
