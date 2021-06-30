@@ -1,15 +1,12 @@
 package com.example.designpattern;
 
-import org.junit.Test;
-
 /**
- * @author Dorra
- * @date 2021/06/06 21:58
+ * @author clz
+ * @date 2021/06/06 21:54
  * @description
  */
-public class ResourcePoolConfigTest {
-    @Test
-    public void resourcePoolTest() {
+public class ResourcePoolConfigDemo {
+    public static void main(String[] args) {
         // 这段代码会抛出IllegalArgumentException，因为minIdle>maxIdle
         ResourcePoolConfig config = new ResourcePoolConfig.Builder()
                 .setName("dbconnectionpool")
