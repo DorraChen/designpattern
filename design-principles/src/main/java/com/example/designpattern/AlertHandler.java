@@ -1,6 +1,6 @@
-package com.example.designpattern.chapter16;
+package com.example.designpattern;
 
-import com.example.designpattern.chapter16.model.ApiStatInfo;
+import com.example.designpattern.model.ApiStatInfo;
 
 /**
  * @author dorra

@@ -1,6 +1,6 @@
-package com.example.designpattern.chapter16;
+package com.example.designpattern;
 
-import com.example.designpattern.chapter16.enums.NotificationEmergencyLevel;
+import com.example.designpattern.enums.NotificationEmergencyLevel;
 
 /**
  * @author dorra

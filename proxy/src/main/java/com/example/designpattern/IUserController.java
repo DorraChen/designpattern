@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter48;
+package com.example.designpattern;
 
 /**
  * @author dorra

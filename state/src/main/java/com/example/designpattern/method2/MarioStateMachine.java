@@ -1,8 +1,6 @@
-package com.example.designpattern.chapter64.method2;
+package com.example.designpattern.method2;
 
-import com.example.designpattern.chapter64.State;
-
-import static com.example.designpattern.chapter64.State.*;
+import com.example.designpattern.State;
 
 /**
  * @author dorra
@@ -14,10 +12,10 @@ public class MarioStateMachine {
     private State currentState;
 
     private static final State[][] transitionTable = {
-            {SUPER, CAPE, FIRE, SMALL},
-            {SUPER, CAPE, FIRE, SMALL},
-            {CAPE, CAPE, CAPE, SMALL},
-            {FIRE, FIRE, FIRE, SMALL}
+            {State.SUPER, State.CAPE, State.FIRE, State.SMALL},
+            {State.SUPER, State.CAPE, State.FIRE, State.SMALL},
+            {State.CAPE, State.CAPE, State.CAPE, State.SMALL},
+            {State.FIRE, State.FIRE, State.FIRE, State.SMALL}
     };
 
     private static final int[][] actionTable = {

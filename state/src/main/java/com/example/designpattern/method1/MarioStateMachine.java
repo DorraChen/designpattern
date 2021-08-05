@@ -1,6 +1,6 @@
-package com.example.designpattern.chapter64.method1;
+package com.example.designpattern.method1;
 
-import com.example.designpattern.chapter64.State;
+import com.example.designpattern.State;
 
 /**
  * @author dorra

@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter16.enums;
+package com.example.designpattern.enums;
 
 /**
  * @author dorra

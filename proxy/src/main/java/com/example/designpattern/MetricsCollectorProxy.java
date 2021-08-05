@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter48;
+package com.example.designpattern;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

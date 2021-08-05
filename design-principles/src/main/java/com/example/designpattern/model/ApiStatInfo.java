@@ -1,4 +1,4 @@
-package com.example.designpattern.chapter16.model;
+package com.example.designpattern.model;
 
 import lombok.Data;
 
