@@ -1,6 +1,6 @@
-package com.example.designpattern.method2;
+package com.example.designpattern.mario.method2;
 
-import com.example.designpattern.State;
+import com.example.designpattern.mario.State;
 
 /**
  * @author dorra

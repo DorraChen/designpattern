@@ -1,4 +1,4 @@
-package com.example.designpattern.method2;
+package com.example.designpattern.mario.method2;
 
 /**
  * @author dorra
