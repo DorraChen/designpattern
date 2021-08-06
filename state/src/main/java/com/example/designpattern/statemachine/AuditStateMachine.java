@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author dorra
  * @date 2021/1/7 14:32
- * @description
+ * @description 简单的请假审批状态机
  */
 public class AuditStateMachine extends StateMachine {
 
