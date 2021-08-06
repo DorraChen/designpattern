@@ -1,4 +1,4 @@
-package com.example.designpattern.statemachine;
+package com.example.designpattern.auditstatemachine;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package com.example.designpattern.statemachine;
+package com.example.designpattern.auditstatemachine;
 
 import java.util.ArrayList;
 import java.util.List;
