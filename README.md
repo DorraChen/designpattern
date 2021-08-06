@@ -22,7 +22,7 @@
 * 策略
 * 职责链
 * 迭代器
-* 状态
+* [状态模式(State Design Pattern)](state/README.md)
 * 访问者
 * 备忘录
 * 命令
