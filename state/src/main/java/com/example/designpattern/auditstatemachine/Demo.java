@@ -8,6 +8,7 @@ package com.example.designpattern.auditstatemachine;
 public class Demo {
     public static void main(String[] args) {
         StateMachine sm = new AuditStateMachine();
-        State state = sm.execute(AuditStateMachine.StateCodeContents.PENDING, new Event(AuditStateMachine.EventCodeContents.PASS));
+        State state = sm.execute(AuditStateMachine.StateCodeContents.PENDING,
+                new Event(AuditStateMachine.EventCodeContents.PASS));
     }
 }
