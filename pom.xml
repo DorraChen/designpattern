@@ -12,6 +12,7 @@
         <module>factory</module>
         <module>builder</module>
         <module>prototype</module>
+        <module>chain-of-responsibility</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

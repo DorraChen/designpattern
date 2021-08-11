@@ -1,4 +1,4 @@
-# 状态模式
+# 状态模式(State Design Pattern)
 
 ## 有限状态机
 有限状态机(Finite State Machine), 缩写是 FSM, 简称为状态机. 被描述的事物的状态的数量是有限个.

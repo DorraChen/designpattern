@@ -20,7 +20,7 @@
 * 观察者
 * 模板方法
 * 策略
-* 职责链
+* [职责链模式(Chain of Responsibility Design Pattern)](chain-of-responsibility/README.md)
 * 迭代器
 * [状态模式(State Design Pattern)](state/README.md)
 * 访问者
