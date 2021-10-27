@@ -7,9 +7,14 @@ import java.lang.reflect.Proxy;
 /**
  * @author dorra
  * @date 2021/1/27 17:11
- * @description
+ * @description 动态代理
  */
 public class MetricsCollectorProxy {
+    private MetricsCollector metricsCollector;
+
+    public MetricsCollectorProxy() {
+        this.metricsCollector = new MetricsCollector();
+    }
 
     public Object createProxy(Object proxiedObject) {
         Class<?>[] interfaces = proxiedObject.getClass().getInterfaces();
@@ -27,11 +32,13 @@ public class MetricsCollectorProxy {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("in proxy代理模式test");
+            long startTimestamp = System.currentTimeMillis();
             Object result = method.invoke(proxiedObject, args);
+            long endTimeStamp = System.currentTimeMillis();
+            long responseTime = endTimeStamp - startTimestamp;
             String apiName = proxiedObject.getClass().getName() + ":" + method.getName();
-            System.out.println("apiName: " + apiName);
-            System.out.println("测试一下git merge!");
+            RequestInfo requestInfo = new RequestInfo(apiName, responseTime, startTimestamp);
+            metricsCollector.recordRequest(requestInfo);
             return result;
         }
     }
