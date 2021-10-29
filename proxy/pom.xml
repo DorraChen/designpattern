@@ -11,5 +11,12 @@
 
     <artifactId>proxy</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.21.0-GA</version>
+        </dependency>
+    </dependencies>
 
 </project>
